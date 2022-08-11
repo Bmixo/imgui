@@ -522,6 +522,18 @@ type ImDrawVert struct {
 	col ImU32
 }
 
+func (this *ImDrawVert) GetPos() ImVec2 {
+	return this.pos
+}
+
+func (this *ImDrawVert) GetUv() ImVec2 {
+	return this.uv
+}
+
+func (this *ImDrawVert) GetCol() ImU32 {
+	return this.col
+}
+
 func ImDrawVertSizeAndOffset() (size, o1, o2, o3 uintptr) {
 	return unsafe.Sizeof(ImDrawVert{}),
 		unsafe.Offsetof(ImDrawVert{}.pos),
